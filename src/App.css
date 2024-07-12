@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Arial', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #333;
+  padding: 1rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-left: 1rem;
+}
+
+.navbar-links a, .logout-button {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navbar-links a:hover, .logout-button:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+.logout-button {
+  font-size: 1rem;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.show-password-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 0.9rem;
+}
+
+.show-password-button:hover {
+  color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-links a, .logout-button {
+    width: 100%;
+    text-align: left;
   }
 }
